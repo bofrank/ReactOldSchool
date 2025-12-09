@@ -18,6 +18,14 @@ class UserFinder extends Component {
         }
     }
 
+    componentDidMount(){
+        // send http request
+        this.setState({ filteredUsers: DUMMY_USERS});
+        //new skool would be to simply put
+        // useEffect(() => {}, [deps])
+        // in the const UserFinder below
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if(prevState.searchTerm !== this.state.searchTerm){
             this.setState({
